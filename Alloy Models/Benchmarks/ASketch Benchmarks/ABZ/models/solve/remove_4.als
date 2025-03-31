@@ -1,0 +1,15 @@
+one sig List {
+  header, header': lone Node
+}
+
+sig Node {
+  elem, elem': lone Object,
+  link, link': lone Node
+}
+
+sig Object {}
+
+pred Remove(l: List, e: Object) {
+  \E,e1\ \BO,bo1\ \E,e1\ = \E,e1\
+  -- l.header.*link.elem - e = l.header'.*link'.elem'
+}
